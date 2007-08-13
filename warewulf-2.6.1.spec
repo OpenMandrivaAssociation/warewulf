@@ -1,24 +1,24 @@
-%define name    warewulf
-%define version 2.6.1
-%define release 4
+%define name	warewulf
+%define version	2.6.3
+%define release	1
 
-Name:           %{name}
-Summary:        A cluster implementation and management tool
-Version:        %{version}
-Release:        %mkrel %{release}
-License:        GPL
-Group:          System/Servers
-Source0:        %{name}-%{version}.tar.bz2
-Source1:        gzip.c.patch.bz2
-Patch0:         Makefile.patch
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
-Requires:  	dhcp tftp-server nfs-utils perl rsh
+Name:		%{name}
+Summary:	A cluster implementation and management tool
+Version:	%{version}
+Release:	%mkrel %{release}
+License:	GPL
+Group:		System/Servers
+Source0:	http://warewulf.lbl.gov/downloads/releases/%{version}/%{name}-%{version}.tar.gz
+Source1:	gzip.c.patch
+Patch0:		Makefile.patch
+BuildRoot:	%{_tmppath}/%{name}-buildroot
+Requires:	dhcp tftp-server nfs-utils perl rsh
 Requires:  	%{name}-tools = %{version}-%{release}
 Requires:  	perl-Unix-Syslog
 Requires:	rpm-helper
 ExclusiveOS: 	linux
-BuildRequires: 	glibc-static-devel
-URL:         	http://www.warewulf-cluster.org/
+BuildRequires:	glibc-static-devel
+URL:		http://www.warewulf-cluster.org/
 Provides: 	perl(Warewulf::Config) 
 Provides: 	perl(Warewulf::PXE) 
 Provides: 	perl(Warewulf::Util) 
@@ -81,7 +81,7 @@ suitable for being slurped by gmetad.
 %package  web
 Summary:  The Warewulf web frontend
 Group:    Monitoring
-Requires: httpd
+Requires: webserver
 
 %description web
 Warewulf is a customizable cluster build tool that facilitates the building
@@ -92,13 +92,14 @@ The web frontend provides an interface to one or more Warewulf clusters.
 
 %prep
 %setup -q -n %{name}-%{version} 
-%{__bzip2} -cd %{SOURCE1} > ./gzip.c.patch
+%{__cp} -p %{SOURCE1} .
 %patch0 -p0
 
 %build
 %{__make} %{?mflags}
 
 %install
+%{__rm} -Rf %{buildroot}
 %{__make} install DESTDIR=$RPM_BUILD_ROOT %{?mflags_install}
 
 %{__mkdir_p} $RPM_BUILD_ROOT/var/warewulf/vnfs
