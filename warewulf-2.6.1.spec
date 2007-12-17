@@ -11,7 +11,6 @@ Group:		System/Servers
 Source0:	http://warewulf.lbl.gov/downloads/releases/%{version}/%{name}-%{version}.tar.gz
 Source1:	gzip.c.patch
 Patch0:		Makefile.patch
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	dhcp tftp-server nfs-utils perl rsh
 Requires:  	%{name}-tools = %{version}-%{release}
 Requires:  	perl-Unix-Syslog
