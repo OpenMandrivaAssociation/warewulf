@@ -50,7 +50,7 @@ interactive login nodes and remote monitoring nodes.
 %package wulfd
 Summary: The Warewulf node daemon
 Group:   System/Servers
-Prereq:  chkconfig
+Requires:  chkconfig
 
 %description wulfd
 Warewulf is a customizable cluster construction tool that facilitates the
@@ -63,7 +63,7 @@ This is the node daemon component of the Warewulf system.
 %package proxy
 Summary: The Warewulf node daemon proxy service
 Group:   System/Servers
-Prereq:  chkconfig
+Requires:  chkconfig
 
 %description proxy
 Warewulf is a customizable cluster construction tool that facilitates the
