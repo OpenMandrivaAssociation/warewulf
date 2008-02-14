@@ -8,6 +8,7 @@ Version:	%{version}
 Release:	%mkrel %{release}
 License:	GPL
 Group:		System/Servers
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source0:	http://warewulf.lbl.gov/downloads/releases/%{version}/%{name}-%{version}.tar.gz
 Source1:	gzip.c.patch
 Patch0:		Makefile.patch
