@@ -1,12 +1,12 @@
 %define name	warewulf
 %define version	2.6.3
-%define release	1
+%define release	2
 
 Name:		%{name}
 Summary:	A cluster implementation and management tool
 Version:	%{version}
 Release:	%mkrel %{release}
-License:	GPL
+License:	GPLv2+
 Group:		System/Servers
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source0:	http://warewulf.lbl.gov/downloads/releases/%{version}/%{name}-%{version}.tar.gz
@@ -18,7 +18,7 @@ Requires:  	perl-Unix-Syslog
 Requires:	rpm-helper
 ExclusiveOS: 	linux
 BuildRequires:	glibc-static-devel
-URL:		http://www.warewulf-cluster.org/
+URL:		http://www.perceus.org
 Provides: 	perl(Warewulf::Config) 
 Provides: 	perl(Warewulf::PXE) 
 Provides: 	perl(Warewulf::Util) 
