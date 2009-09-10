@@ -1,6 +1,6 @@
 %define name	warewulf
 %define version	2.6.3
-%define release	2
+%define release	3
 
 Name:		%{name}
 Summary:	A cluster implementation and management tool
