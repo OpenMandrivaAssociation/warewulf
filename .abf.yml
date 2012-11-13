@@ -1,0 +1,3 @@
+sources:
+  "gzip.c.patch:"	c11dd5b54aef1dea57cbdd5fa2bdfa7236a2d50e
+  "warewulf-2.6.3.tar.gz:"	b430e15ed678261d8b5866d45c607872f83650c6
