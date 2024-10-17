@@ -18,7 +18,7 @@ Requires:  	perl-Unix-Syslog
 Requires:	rpm-helper
 ExclusiveOS: 	linux
 BuildRequires:	glibc-static-devel
-URL:		http://www.perceus.org
+URL:		https://www.perceus.org
 Provides: 	perl(Warewulf::Config) 
 Provides: 	perl(Warewulf::PXE) 
 Provides: 	perl(Warewulf::Util) 
