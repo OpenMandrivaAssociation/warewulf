@@ -1,11 +1,11 @@
 %define name	warewulf
 %define version	2.6.3
-%define release	3
+%define release 4
 
 Name:		%{name}
 Summary:	A cluster implementation and management tool
 Version:	%{version}
-Release:	%mkrel %{release}
+Release:	%{release}.1
 License:	GPLv2+
 Group:		System/Servers
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
